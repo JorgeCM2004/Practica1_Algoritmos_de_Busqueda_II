@@ -1,4 +1,8 @@
+import os
+
 from Interfaces.F_Solution_Binary import Solution_Binary
+
+ABS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 class P1_Saver():
 	def save(self, solution_list: list[Solution_Binary], optional_header = None):
@@ -17,18 +21,18 @@ class P1_Saver():
 			percentage = solution.get_percentage_improved()
 			CPU_time = str(solution.get_CPU_time()) + ' s'
 			lines.append(";".join([name, value, taken, transformed_sol, percentage, CPU_time]))
-		with open(".\\Saves\\Last_Save.csv", "w") as file:
+		with open(ABS_PATH + "\\Saves\\Last_Save.csv", "w") as file:
 			file.write(HEADER)
 			for line in lines:
 				file.write(line + '\n')
 		try:
-			with open(".\\Saves\\Best_Save.csv", "r") as best_file:
+			with open(ABS_PATH + "\\Saves\\Best_Save.csv", "r") as best_file:
 				best_file.readline()
 				for best_line in best_file:
 					best_lines.append(best_line)
 			lines.sort()
 			best_lines.sort()
-			with open(".\\Saves\\Best_Save.csv", "w") as best_file:
+			with open(ABS_PATH + "\\Saves\\Best_Save.csv", "w") as best_file:
 				best_file.write(csv_h)
 				i = 0
 				while i < len(lines) and i < len(best_lines):
@@ -54,7 +58,7 @@ class P1_Saver():
 					best_file.write(best_lines[i])
 					i += 1
 		except:
-			with open(".\\Saves\\Best_Save.csv", "w") as best_file:
+			with open(ABS_PATH + "\\Saves\\Best_Save.csv", "w") as best_file:
 				best_file.write(csv_h)
 				for line in lines:
 					best_file.write(line + '\n')

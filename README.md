@@ -1,6 +1,14 @@
 # Jorge Camacho Mejías - Práctica 1 - Python
 
 ## Clonar Repositorio desde GitHub
+Se recomienda clonar el repositorio desde GitHub: https://github.com/JorgeCM2004/Practica1_Algoritmos_de_Busqueda_II
+
+Para clonar un repositorio es necesario tener instalado alguna version de _git_ en tu ordenador.
+La forma mas fácil es ir al sitio oficial y descargarlo:
+![alt text](./Images/PaginaGit.png)
+
+Tras tener instalado _git_, debes acceder al repositorio de GitHub y en la pestaña que se despliega al hacer click en el botón "Code" debes seleccionar HTTP y copiar el enlace:
+
 
 ## Crear Entorno de Ejecución
 
@@ -12,7 +20,7 @@ Para instalar python nos dirigiremos a nuestro navegador de confianza y buscarem
 
 ![alt text](./Images/WebPython.png)
 
-E instalaremos la versión 3.12.4 para nuestro sistema operativo:
+E instalaremos la versión __3.12.4__ para nuestro sistema operativo:
 
 ![alt text](./Images/VersionPython.png)
 
@@ -81,3 +89,10 @@ El archivo main usa la clase "Runner" (Experiment), esta es la que se encarga de
 - Tipo de algoritmo a utilizar: Puede usar "Algorithm_1" o "Algorithm_2".
 - Tiempo por instancia: Utilizar tiempos muy pequeños por instancia puede dar a que este se pase del tiempo maximo (unidades -> segundos).
 - Guardar ejecución.
+
+### F_P1_Test_Runner
+Este archivo se encuentra en la carpeta de tests y se debe ejecutar con el siguiente comando:
+```bash
+pytest .\\F_P1_Test_Runner.py
+```
+Si quieres añadir más tests debes incluirlos en "F_P1_Tests.py" con el nombre de la instancia y el valor mínimo que se espera, además de incluir la instancia en la carpeta de instancias.

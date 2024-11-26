@@ -13,6 +13,9 @@ N_REP = 10
 C = lambda x: x < 1
 
 class P1_Algorithm_2(Experiment):
+	"""
+	GRASP Constructive + Simulated Annealing.
+	"""
 	def run(self, instance: Instance, objetive_function: Objetive_Function, max_time: float, alpha: float) -> Solution_Binary:
 		time0 = time()
 		time1 = time0

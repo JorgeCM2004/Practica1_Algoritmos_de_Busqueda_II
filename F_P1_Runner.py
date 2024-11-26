@@ -9,10 +9,8 @@ from F_P1_Algorithm_2 import P1_Algorithm_2
 from Utilities.F_P1_Saver import P1_Saver
 from F_P1_Objetive_Function import P1_Objetive_Function
 
-ALPHA = 0.5
-
 class P1_Runner:
-	def run(self, algorithm_name: Literal["Algorithm_1", "Algorithm_2"] = "Algorithm_1", seconds_per_instance: int = 60, save: bool = False):
+	def run(self, algorithm_name: Literal["Algorithm_1", "Algorithm_2"] = "Algorithm_1", seconds_per_instance: int = 60, save: bool = True, ALPHA = 0.5):
 		searcher = P1_Search_Instances()
 		objetive_function = P1_Objetive_Function()
 		total_time = len(searcher.instances_list) * seconds_per_instance * 0.95
@@ -33,4 +31,4 @@ class P1_Runner:
 		if save:
 			saver = P1_Saver()
 			saver.save(solutions, "Jorge_Camacho_Mejias - " + algorithm_name)
-
+		self.solutions = solutions

@@ -11,13 +11,13 @@ class P1_Simulated_Annealing(Improvement):
 		while not C(t0) and t0 > 0:
 			for _ in range(n_rep):
 				new_sol = self._get_random_neighbour(solution)
-				sigma = solution.get_of_value() - new_sol.get_of_value()
-				if sigma < 0:
+				delta = solution.get_of_value() - new_sol.get_of_value()
+				if delta < 0:
 					solution.set_new_list(new_sol.get_list().copy())
 					best_sol.set_new_list(new_sol.get_list().copy())
 				else:
 					u = np.random.uniform(0, 1)
-					if u < np.exp(-sigma / t0):
+					if u < np.exp(-delta / t0):
 						solution.set_new_list(new_sol.get_list().copy())
 			t0 = temperature_function(t0)
 		return best_sol

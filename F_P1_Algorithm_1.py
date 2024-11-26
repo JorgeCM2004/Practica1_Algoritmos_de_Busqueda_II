@@ -8,6 +8,10 @@ from Algorithms.F_P1_GRASP_Constructive import P1_GRASP_Constructive
 from Algorithms.F_P1_Swap_First_Improvement import P1_Swap_First_Improvement
 
 class P1_Algorithm_1(Experiment):
+	"""
+	GRASP Constructive +  First Improvement using Swap
+	(Swapping one True for one False on the solution array).
+	"""
 	def run(self, instance: Instance, objetive_function: Objetive_Function, max_time: float, alpha: float) -> Solution_Binary:
 		time0 = time()
 		time1 = time0
