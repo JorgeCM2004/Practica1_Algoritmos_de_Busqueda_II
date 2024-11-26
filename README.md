@@ -2,13 +2,23 @@
 
 ## Clonar Repositorio desde GitHub
 Se recomienda clonar el repositorio desde GitHub: https://github.com/JorgeCM2004/Practica1_Algoritmos_de_Busqueda_II
+Ya que el .zip tiene archivos ya procesados por ejemplo de pytest.
 
 Para clonar un repositorio es necesario tener instalado alguna version de _git_ en tu ordenador.
 La forma mas fácil es ir al sitio oficial y descargarlo:
+
 ![alt text](./Images/PaginaGit.png)
 
 Tras tener instalado _git_, debes acceder al repositorio de GitHub y en la pestaña que se despliega al hacer click en el botón "Code" debes seleccionar HTTP y copiar el enlace:
 
+![alt text](./Images/OrdenClonacion.png)
+
+Abriremos una terminal y clonaremos el repositorio donde deseemos con el siguiente comando:
+```bash
+git clone https://github.com/JorgeCM2004/Practica1_Algoritmos_de_Busqueda_II.git nombre_carpeta
+```
+
+Con todo esto el directorio se creará donde te encuentres con en nombre que le hayas dado y podrás ejecutar el código.
 
 ## Crear Entorno de Ejecución
 
@@ -96,3 +106,11 @@ Este archivo se encuentra en la carpeta de tests y se debe ejecutar con el sigui
 pytest .\\F_P1_Test_Runner.py
 ```
 Si quieres añadir más tests debes incluirlos en "F_P1_Tests.py" con el nombre de la instancia y el valor mínimo que se espera, además de incluir la instancia en la carpeta de instancias.
+
+### F_P1_Stadistic_Runner
+Para este ultimo archivo se me ocurrió probar como el "Algoritmo_1" genera distintas soluciones respecto a alpha, por lo que fijando el tiempo a 1 segundo por ejecución puedes observar como varía alpha desde 0 a 1 en saltos de 0.1.
+Este archivo se encuentra en la carpeta de Stadistics y has de ejecutarlo como el archivo "F_P1_Main", no debes usar pytest, y el resultado deberia ser algo como:
+
+![alt text](GraficoStadistics.png)
+
+Las columnas que se coloreen de rojo son las que han alcanzado el mayor valor en esta ejecución.
